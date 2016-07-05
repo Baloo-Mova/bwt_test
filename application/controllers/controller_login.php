@@ -19,9 +19,7 @@ class Controller_Login extends Controller
 			*/
 			if($login=="admin" && $password=="12345")
 			{
-				$data["login_status"] = "access_granted";
-				
-				session_start(); echo $_SESSION['admin'];
+				$data["login_status"] = "access_granted"; 
 				$_SESSION['admin'] = $password;
 				header('Location:/admin/');
 			}
@@ -35,7 +33,7 @@ class Controller_Login extends Controller
 			$data["login_status"] = "";
 		}
 		
-		$this->view->generate('login_view.php', 'template_view.php', $data);
+		$this->view->render('login_view.php', 'template_view.php', $data);
 	}
 	
 }

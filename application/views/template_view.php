@@ -7,8 +7,10 @@
         <title>Тестовое задание</title>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
         <link href="http://fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css" />
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" type="text/css" href="css/style.css"  />
+        <link href="http://localhost/test_bwt/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="http://localhost/test_bwt/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css"/>
+        <link href="http://localhost/test_bwt/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="http://localhost/test_bwt/css/style.css"  />
     </head>
     <body>
         
@@ -28,7 +30,7 @@
                     <div class="navbar-collapse collapse">
                       <ul class="nav navbar-nav menu">
                         <li><a href="/test_bwt/">Главная</a></li>
-                        <li><a href="/test_bwt/user/registraion">Регистрация</a></li>
+                        <li><a href="/test_bwt/user/registration">Регистрация</a></li>
                         <li><a href="/test_bwt/weather">Погода</a></li>
                         <li><a href="/test_bwt/feedback">Форма обратной связи</a></li>
                         <li><a href="/test_bwt/feedbacklist">Список</a></li>
@@ -45,7 +47,10 @@
              <?php include 'application/views/' . $content_view; ?> 
         </div>
 
-        <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="http://localhost/test_bwt/js/jquery-1.9.1.js" type="text/javascript"></script>
+        <script src="http://localhost/test_bwt/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="http://localhost/test_bwt/js/bootstrap-datepicker.min.js" type="text/javascript"></script> 
+        <script src="http://localhost/test_bwt/js/bootstrapValidator.min.js" type="text/javascript"></script>
+        <script src="http://localhost/test_bwt/js/main.js" type="text/javascript"></script>
     </body>
 </html>

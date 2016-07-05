@@ -1,0 +1,14 @@
+html,
+body{
+    margin: 0;
+    padding: 0; 
+}
+
+body{
+    background: #fff url('../images/00bd.png');
+}
+
+.menu{
+    width: 100%;
+    text-align: center;
+}

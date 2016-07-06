@@ -29,7 +29,7 @@ class Model {
     }
 
     // метод выборки данных
-    public function find() {
+    public static function findAll() {
         // todo
     }
 

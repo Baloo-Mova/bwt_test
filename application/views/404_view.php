@@ -21,7 +21,7 @@
                     <h2>страница не найдена</h2>
                     <p>страница которую вы ищите возможно была переименована, перемещена, удалена или вообще не существовала. </p>
                     <a href="/test_bwt/" class="btn">Домой</a>
-                    <a href="/test_bwt/feedback" class="btn btn-brown">Напишите нам</a>
+                    <a href="/test_bwt/feedback/add" class="btn btn-brown">Напишите нам</a>
                 </div>
                 <!-- end Info -->
             </div>

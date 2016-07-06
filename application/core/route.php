@@ -50,9 +50,7 @@ class Route {
              */
             Route::ErrorPage404();
         }
-        
-        //ПОдключаем модель пользователя для операций логина 
-        require_once 'application/models/UserLogin.php';
+         
         
         // создаем контроллер
         $controller = new $controller_name;

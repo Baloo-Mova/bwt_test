@@ -18,7 +18,7 @@ $(document).ready(function () {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            sureName: {
+            name: {
                 message: 'Эта фамилия не валидна',
                 validators: {
                     notEmpty: {
@@ -97,6 +97,59 @@ $(document).ready(function () {
                     }, 
                 }
             }, 
+        }
+    });
+    $('#feedbackform').bootstrapValidator({
+        message: 'Это значение не валидно!',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            captcha:{
+                message:"Нужно ввести Captch-y",
+                validators:{
+                    notEmpty:{
+                        message: 'Поле не может быть пустым'
+                    }
+                }
+            },
+            email: {
+                message: 'Email не валиден',
+                validators: {
+                    notEmpty: {
+                        message: 'Поле имя не может быть пустым'
+                    },
+                    emailAddress: {
+                        message: 'Не верно введен Email'
+                    },
+                    stringLength: { 
+                        max: 50,
+                        message: 'Поле должно содержать до 50 символов'
+                    }, 
+                }
+            }, 
+            name: {
+                message: 'Этот пароль не валиден',
+                validators: {
+                    notEmpty: {
+                        message: 'Поле имя не может быть пустым'
+                    }, 
+                    stringLength: { 
+                        max: 40,
+                        message: 'Поле должно содержать до 40 символов'
+                    }, 
+                }
+            }, 
+            message: {
+                message: 'Этот пароль не валиден',
+                validators: {
+                    notEmpty: {
+                        message: 'Поле сообщение не может быть пустым'
+                    }, 
+                }
+            },
         }
     });
 });

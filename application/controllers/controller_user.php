@@ -26,12 +26,8 @@ class controller_user extends Controller {
             if ($model->load($_POST) && $model->save()) {
                 $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
                 header('Location:' . $host . 'test_bwt/user/registration?success=yes');
-            } else {
-                $this->view->render('registration_view.php', 'template_view.php', ['model' => $model]);
-                return;
-            }
-        }
-
+            } 
+        } 
         $this->view->render('registration_view.php', 'template_view.php', ['model' => $model]);
     }
 

@@ -31,10 +31,15 @@
                       <ul class="nav navbar-nav menu">
                         <li><a href="/test_bwt/">Главная</a></li>
                         <li><a href="/test_bwt/user/registration">Регистрация</a></li>
-                        <li><a href="/test_bwt/weather">Погода</a></li>
                         <li><a href="/test_bwt/feedback">Форма обратной связи</a></li>
-                        <li><a href="/test_bwt/feedbacklist">Список</a></li>
-                        <li class="navbar-nav navbar-right"><a href="/test_bwt/user/login">Вход</a></li>
+                        <?php if(!UserLogin::isGuest()): ?>
+                        <li><a href="/test_bwt/weather">Погода</a></li> 
+                        <li><a href="/test_bwt/feedbacklist">Список</a></li> 
+                        <li class="navbar-nav navbar-right"><a href="/test_bwt/user/logout" data-method="POST"> Выход </a></li>
+                        <li class="navbar-nav navbar-right navbar-text "><?= "Здравствуйте, ". $_SESSION["User"] ?></li>
+                        <?php else:?> 
+                        <li class="navbar-nav navbar-right"><a href="/test_bwt/user/login">Вход</a></li> 
+                        <?php endif;?>
                       </ul>
                     </div>
                 </div>

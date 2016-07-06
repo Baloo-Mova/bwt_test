@@ -5,8 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require_once 'application/core/db.php';
-
+require_once 'application/classes/db.php';
 /**
  * Description of User
  *
@@ -21,13 +20,7 @@ class User extends Model {
     public $gender;
     public $email;
     public $date;
-    
-    private  $db;
-    
-    function __construct(){
-        $this->db = new DB();
-    }
-
+     
     public function get_data() {
         
     }
@@ -84,13 +77,6 @@ class User extends Model {
         } else {
             return false;
         }
-    }
-    
-    public static function isGuest() {
-        if (isset($_SESSION['isLoggined'])) {
-            return true;
-        }
-        return false;
-    }
+    } 
 
 }

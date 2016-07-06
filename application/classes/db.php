@@ -209,7 +209,7 @@ class DB
 	 */
 	public function getRow()
 	{
-		$query = $this->prepareQuery(func_get_args());
+		$query = $this->prepareQuery(func_get_args()); 
 		if ($res = $this->rawQuery($query)) {
 			$ret = $this->fetch($res);
 			$this->free($res);

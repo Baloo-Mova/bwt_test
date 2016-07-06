@@ -69,4 +69,34 @@ $(document).ready(function () {
             }
         }
     });
+    
+    $('#loginForm').bootstrapValidator({
+        message: 'Это значение не валидно!',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            email: {
+                message: 'Email не валиден',
+                validators: {
+                    notEmpty: {
+                        message: 'Поле имя не может быть пустым'
+                    },
+                    emailAddress: {
+                        message: 'Не верно введен Email'
+                    }
+                }
+            }, 
+            password: {
+                message: 'Этот пароль не валиден',
+                validators: {
+                    notEmpty: {
+                        message: 'Поле пароль не может быть пустым'
+                    }, 
+                }
+            }, 
+        }
+    });
 });

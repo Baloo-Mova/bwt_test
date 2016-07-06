@@ -2,7 +2,12 @@
 
 class Model {
 
-    protected $errors = [];
+    protected $errors = []; 
+    protected  $db;
+    
+    function __construct(){
+        $this->db = new DB();
+    }
     
     public function setError($errMessage){
         $this->errors[] = $errMessage;

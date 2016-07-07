@@ -12,10 +12,10 @@
         <title>Тестовое задание</title>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
         <link href="http://fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css" />
-        <link href="http://localhost/test_bwt/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="http://localhost/test_bwt/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css"/>
-        <link href="http://localhost/test_bwt/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" type="text/css" href="http://localhost/test_bwt/css/style.css"  />
+        <link href="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css"/>
+        <link href="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/css/style.css"  />
     </head>
     <body>
         
@@ -57,10 +57,10 @@
              <?php include 'application/views/' . $content_view; ?> 
         </div>
 
-        <script src="http://localhost/test_bwt/js/jquery-1.9.1.js" type="text/javascript"></script>
-        <script src="http://localhost/test_bwt/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="http://localhost/test_bwt/js/bootstrap-datepicker.min.js" type="text/javascript"></script> 
-        <script src="http://localhost/test_bwt/js/bootstrapValidator.min.js" type="text/javascript"></script>
-        <script src="http://localhost/test_bwt/js/main.js" type="text/javascript"></script>
+        <script src="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/js/jquery-1.9.1.js" type="text/javascript"></script>
+        <script src="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/js/bootstrap-datepicker.min.js" type="text/javascript"></script> 
+        <script src="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/js/bootstrapValidator.min.js" type="text/javascript"></script>
+        <script src="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/js/main.js" type="text/javascript"></script>
     </body>
 </html>

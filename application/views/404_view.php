@@ -4,11 +4,11 @@
     <title>Monkey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Libs CSS -->
-    <link type="text/css" media="all" href="css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" media="all" href="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/css/bootstrap.min.css" rel="stylesheet">
     <!-- Template CSS -->
-    <link type="text/css" media="all" href="css/404style.css" rel="stylesheet">
+    <link type="text/css" media="all" href="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/css/404style.css" rel="stylesheet">
     <!-- Responsive CSS -->
-    <link type="text/css" media="all" href="css/respons.css" rel="stylesheet">  
+    <link type="text/css" media="all" href="http://<?= $_SERVER['SERVER_NAME'] ?>/test_bwt/css/respons.css" rel="stylesheet">  
 </head>
 <body>
     <!-- Content Wrapper -->

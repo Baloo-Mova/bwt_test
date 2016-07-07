@@ -5,7 +5,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+namespace application\models;
 
+use application\core\Model;
+use application\helpers\DB;
 /**
  * Description of FeedBack
  *

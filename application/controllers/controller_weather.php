@@ -5,7 +5,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require_once 'application/models/Weather.php';
+
+namespace application\controllers;
+
+
+use application\core\Controller;
+use application\models\Weather;
+
+use application\models\UserLogin;
 /**
  * Description of controller_weather
  *

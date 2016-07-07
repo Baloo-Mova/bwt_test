@@ -1,6 +1,10 @@
 <?php
 
-class Controller_Main extends Controller
+namespace application\controllers;
+
+use application\core\Controller;
+
+class controller_main extends Controller
 {
 
 	function action_index()

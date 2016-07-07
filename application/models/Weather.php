@@ -5,7 +5,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require_once 'application/classes/simple_html_dom.php';
+
+namespace application\models;
+
+use application\helpers\html\simple_html_dom_helper;
+use application\core\Model;
 
 /**
  * Description of Weather
@@ -21,8 +25,8 @@ class Weather extends Model {
     public $hum;
     public $water;
 
-    public function load($data) {
-        $html = file_get_html('http://www.gismeteo.ua/city/daily/5093/');
+    public function load($data) { 
+        $html = simple_html_dom_helper::file_get_html('http://www.gismeteo.ua/city/daily/5093/');
 
         //Находим элемент формы где написаны данные
         $k = $html->find('.higher', 0);
@@ -42,5 +46,6 @@ class Weather extends Model {
 
         $this->water = html_entity_decode($k->find('.water', 0)->find('.c', 0)->plaintext);
     }
+ 
 
 }

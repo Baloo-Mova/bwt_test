@@ -1,5 +1,9 @@
 <?php
 
+namespace application\core;
+
+use application\helpers\DB;
+
 class Model {
 
     protected $errors = []; 

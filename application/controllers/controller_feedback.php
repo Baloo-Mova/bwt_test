@@ -5,7 +5,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require_once 'application/models/FeedBack.php';
+
+namespace application\controllers;
+
+use application\core\Controller;
+use application\models\FeedBack;
+use application\models\UserLogin;
 /**
  * Description of controller_feedback
  *

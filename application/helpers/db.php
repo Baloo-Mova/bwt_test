@@ -65,6 +65,7 @@
  * $data = $db->getAll("SELECT * FROM table WHERE ?p", $bar, $sqlpart);
  * 
  */
+namespace application\helpers;
 class DB
 {
 	private $conn;

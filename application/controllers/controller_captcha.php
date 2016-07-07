@@ -5,7 +5,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require_once 'application/classes/Captcha.php';
+
+namespace application\controllers;
+
+use application\core\Controller;
+use application\helpers\Captcha;
+
 /**
  * Description of controller_captcha
  *
@@ -16,8 +21,7 @@ class controller_captcha  extends Controller{
     public function action_index() {
          $model = new Captcha();
          $_SESSION['captcha'] = $model->getCode();
-         $model->showImage();
-         
+         $model->showImage(); 
     }
     
 }

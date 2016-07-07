@@ -5,8 +5,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require_once 'application/models/User.php';
-require_once 'application/models/UserLogin.php';
+
+namespace application\controllers; 
+
+use application\models\User;
+use application\models\UserLogin; 
+use application\core\Controller;
 
 /**
  * Description of controller_user

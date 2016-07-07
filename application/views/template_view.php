@@ -35,7 +35,9 @@
                     <div class="navbar-collapse collapse">
                       <ul class="nav navbar-nav menu">
                         <li><a href="/test_bwt/">Главная</a></li>
+                        <?php if(UserLogin::isGuest()):?>
                         <li><a href="/test_bwt/user/registration">Регистрация</a></li>
+                        <?php endif;?>
                         <li><a href="/test_bwt/feedback/add">Форма обратной связи</a></li>
                         <?php if(!UserLogin::isGuest()): ?>
                         <li><a href="/test_bwt/weather">Погода</a></li> 

@@ -25,6 +25,10 @@ class controller_user extends Controller {
 
     public function action_registration() {
 
+        if(!UserLogin::isGuest()){
+            \application\core\Route::ErrorPage404();
+        }
+        
         $model = new User();
         if (isset($_POST['register'])) {
             if ($model->load($_POST) && $model->save()) {

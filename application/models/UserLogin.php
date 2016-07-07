@@ -7,7 +7,7 @@
  */
 namespace application\models;
 use application\core\Model; 
-use application\helpers\DBSettings;
+use application\helpers\DBConnect;
 /**
  * Description of UserLogin
  *
@@ -44,9 +44,8 @@ class UserLogin extends Model {
     }
     
     public function login(){
-        $db = new DBSettings();  
-        $pdo = new \PDO($db->connectionstring, $db->user, $db->password, $db->options); 
         
+        $pdo = DBConnect::getInstance()->pdo;
         $stmt = $pdo->prepare("Select Name, SureName from user where Email like ? and Password = md5(?)");
         $stmt->execute(['%'.$this->email.'%',  $this->password]); 
         $data = $stmt->fetch();

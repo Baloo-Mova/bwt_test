@@ -8,7 +8,7 @@
 namespace application\models;
 
 use application\core\Model;
-use application\helpers\DBSettings;
+use application\helpers\DBConnect;
 /**
  * Description of FeedBack
  *
@@ -56,9 +56,8 @@ class FeedBack extends Model {
     }
 
     public function save() {
-        $db = new DBSettings(); 
         
-        $pdo = new \PDO($db->connectionstring, $db->user, $db->password, $db->options); 
+        $pdo = DBConnect::getInstance()->pdo;
         
         $stmt = $pdo->prepare("Insert into feedback(Name,Email,Message) values (?,?,?)");
         return $stmt->execute([$this->name, $this->email, $this->message]);
@@ -69,9 +68,7 @@ class FeedBack extends Model {
         
         
         $sql = "Select * from feedback";
-        $db = new DBSettings(); 
-        
-        $pdo = new \PDO($db->connectionstring, $db->user, $db->password, $db->options); 
+        $pdo = DBConnect::getInstance()->pdo;
         $stmt = $pdo->query($sql);
  
         foreach ($stmt->fetchAll() as $item) { 

@@ -8,7 +8,7 @@
 namespace application\models;
 
 use application\core\Model;
-use application\helpers\DBSettings;
+use application\helpers\DBConnect;
  
 /**
  * Description of User
@@ -30,11 +30,8 @@ class User extends Model {
     }
     
     public function save() { 
-        $db = new DBSettings();  
-        $pdo = new \PDO($db->connectionstring, $db->user, $db->password, $db->options); 
-        
-        $stmt = $pdo->prepare("Insert into user(Name,SureName,Email,Password,Gender,BirthDate) values (?,?,?,md5(?),?,?)");
-        
+        $pdo = DBConnect::getInstance()->pdo; 
+        $stmt = $pdo->prepare("Insert into user(Name,SureName,Email,Password,Gender,BirthDate) values (?,?,?,md5(?),?,?)"); 
         return $stmt->execute([$this->name,$this->sureName,$this->email,$this->password,$this->gender,$this->date]); 
     }
 

@@ -8,7 +8,7 @@
 namespace application\models;
 
 use application\core\Model;
-use application\helpers\DB;
+use application\helpers\DBSettings;
 /**
  * Description of FeedBack
  *
@@ -56,21 +56,25 @@ class FeedBack extends Model {
     }
 
     public function save() {
-        if ($this->db->query("Insert into feedback(Name,Email,Message) values (?s,?s,?s)", $this->name, $this->email, $this->message)) {
-            return true;
-        }
-        return false;
+        $db = new DBSettings(); 
+        
+        $pdo = new \PDO($db->connectionstring, $db->user, $db->password, $db->options); 
+        
+        $stmt = $pdo->prepare("Insert into feedback(Name,Email,Message) values (?,?,?)");
+        return $stmt->execute([$this->name, $this->email, $this->message]);
     }
 
     public static function findAll() {
         $result = [];
-
-        $sql = "Select * from feedback ";
-        $db = new DB();
-
-        $data = $db->getAll($sql);
-
-        foreach ($data as $item) {
+        
+        
+        $sql = "Select * from feedback";
+        $db = new DBSettings(); 
+        
+        $pdo = new \PDO($db->connectionstring, $db->user, $db->password, $db->options); 
+        $stmt = $pdo->query($sql);
+ 
+        foreach ($stmt->fetchAll() as $item) { 
             $model = new FeedBack();
             $model->id = $item['Id'];
             $model->email = $item['Email'];

@@ -8,8 +8,8 @@
 namespace application\models;
 
 use application\core\Model;
-
-require_once 'application/helpers/db.php';
+use application\helpers\DBSettings;
+ 
 /**
  * Description of User
  *
@@ -30,11 +30,12 @@ class User extends Model {
     }
     
     public function save() { 
-        if($this->db->query("Insert into user(Name,SureName,Email,Password,Gender,BirthDate) values (?s,?s,?s,md5(?s),?s,?s)",
-                $this->name,$this->sureName,$this->email,$this->password,$this->gender,$this->date)){
-            return true;
-        } 
-        return false; 
+        $db = new DBSettings();  
+        $pdo = new \PDO($db->connectionstring, $db->user, $db->password, $db->options); 
+        
+        $stmt = $pdo->prepare("Insert into user(Name,SureName,Email,Password,Gender,BirthDate) values (?,?,?,md5(?),?,?)");
+        
+        return $stmt->execute([$this->name,$this->sureName,$this->email,$this->password,$this->gender,$this->date]); 
     }
 
     public function load($data) {

@@ -6,8 +6,8 @@
  * and open the template in the editor.
  */
 namespace application\models;
-use application\core\Model;
-require_once 'application/helpers/db.php';
+use application\core\Model; 
+use application\helpers\DBSettings;
 /**
  * Description of UserLogin
  *
@@ -44,8 +44,13 @@ class UserLogin extends Model {
     }
     
     public function login(){
-        $data = $this->db->getRow("Select Name, SureName from user where Email like ?s and Password = md5(?s)",
-                '%'.$this->email.'%',  $this->password); 
+        $db = new DBSettings();  
+        $pdo = new \PDO($db->connectionstring, $db->user, $db->password, $db->options); 
+        
+        $stmt = $pdo->prepare("Select Name, SureName from user where Email like ? and Password = md5(?)");
+        $stmt->execute(['%'.$this->email.'%',  $this->password]); 
+        $data = $stmt->fetch();
+         
         if(!empty($data)){ 
             $_SESSION["User"] = $data["SureName"] ." ". $data["Name"]; 
             return true;  
